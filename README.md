@@ -8,6 +8,7 @@ Each file is a self-contained note on one topic.
 
 ### Auth & Identity
 - [OAuth: HTTPS Website vs MCP Server](./oauth-website-vs-mcp.md) — actor model, flow diagrams, and contrasts between browser-based OAuth and MCP server OAuth.
+- [Getting a Permanent Facebook Page Access Token](./facebook-permanent-page-access-token.md) — token types, the three-stage flow, and how to derive a non-expiring Page token for backend services.
 
 <!-- Add more sections as the library grows, e.g.:
 ### Infra & Deployment
