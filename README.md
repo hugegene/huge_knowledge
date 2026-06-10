@@ -13,9 +13,11 @@ Each file is a self-contained note on one topic.
 ### Infra & Networking
 - [How ngrok Works: Serving localhost Without Port Forwarding](./ngrok-tunneling.md) — outbound tunnel model, usage, and which traffic hops are encrypted vs. visible to ngrok.
 
+### AI / LLM / MCP
+- [Organizing a GitHub Repo for Agentic Coding](./agentic-coding-repo-organization.md) — folder structure, issue templates, the bug-fix / design-develop / testing workflows, and whether you still need Jira and Confluence.
+
 <!-- Add more sections as the library grows, e.g.:
 ### Infra & Deployment
 ### Data & Pipelines
-### AI / LLM / MCP
 ### Tooling & Workflow
 -->
