@@ -32,11 +32,11 @@ Now that we know what EFFR is, here is the contract that lets markets bet on it.
 
 Fed Funds futures (ticker **ZQ**, traded on the Chicago Mercantile Exchange) price interest-rate expectations inversely from a base of 100:
 
-$$\text{Implied Rate} = 100 - \text{Futures Price}$$
+\[ \text{Implied Rate} = 100 - \text{Futures Price} \]
 
 For example, if the December contract (ZQZ6) trades at 95.9925, the implied rate is:
 
-$$100 - 95.9925 = 4.0075\%$$
+\[ 100 - 95.9925 = 4.0075\% \]
 
 ### 2.2 What "30-Day" Actually Means
 
@@ -44,9 +44,9 @@ The contract settles on the **average daily EFFR over a single full calendar mon
 
 This matters because an FOMC meeting mid-month splits the month into two rate regimes. If a hike lands on July 15th, the first 14 days trade at the old rate and the rest at the new one. To handle this, FedWatch applies a **day-weighting formula**:
 
-$$\text{Implied Month Average} = \left( \frac{d}{M} \times R_{\text{old}} \right) + \left( \frac{M - d}{M} \times R_{\text{new}} \right)$$
+\[ \text{Implied Month Average} = \left( \frac{d}{M} \times R_{\text{old}} \right) + \left( \frac{M - d}{M} \times R_{\text{new}} \right) \]
 
-where $M$ = days in the month, $d$ = days before the meeting, $R_{\text{old}}$ = current rate, $R_{\text{new}}$ = expected post-meeting rate.
+where \(M\) = days in the month, \(d\) = days before the meeting, \(R_{\text{old}}\) = current rate, \(R_{\text{new}}\) = expected post-meeting rate.
 
 ### 2.3 How the Live Price Connects to Reality (Convergence)
 
@@ -70,7 +70,7 @@ These two are kept in lockstep by **arbitrage**. If the live price drifts from t
 
 When you trade the contract for the *current* month, the month's average is part-known, part-unknown. The expected average is:
 
-$$\text{Expected Month Average} = \frac{\sum_{i=1}^{d} R_{\text{actual}, i} + \sum_{j=d+1}^{M} R_{\text{expected}, j}}{M}$$
+\[ \text{Expected Month Average} = \frac{\sum_{i=1}^{d} R_{\text{actual}, i} + \sum_{j=d+1}^{M} R_{\text{expected}, j}}{M} \]
 
 where the first sum is already-printed (known) EFFR values and the second is expected values for the rest of the month.
 
@@ -96,15 +96,15 @@ The **CME FedWatch Tool** ([cmegroup.com/markets/interest-rates/cme-fedwatch-too
 
 Now the calculation. Assume a baseline effective rate of 3.58% (midpoint of a 3.50%–3.75% range) and a single meeting ahead. The hike probability is:
 
-$$P(\text{Hike}) = \frac{\text{Implied Rate} - \text{Current Effective Baseline Rate}}{0.25\%}$$
+\[ P(\text{Hike}) = \frac{\text{Implied Rate} - \text{Current Effective Baseline Rate}}{0.25\%} \]
 
-If the front-month contract trades at 96.39, the implied rate is $100 - 96.39 = 3.61\%$, so:
+If the front-month contract trades at 96.39, the implied rate is \(100 - 96.39 = 3.61\%\), so:
 
-$$P(\text{Hike}) = \frac{3.61\% - 3.58\%}{0.25\%} = \frac{0.03\%}{0.25\%} = 0.12 \text{ (12\%)}$$
+\[ P(\text{Hike}) = \frac{3.61\% - 3.58\%}{0.25\%} = \frac{0.03\%}{0.25\%} = 0.12 \text{ (12\%)} \]
 
 And therefore:
 
-$$P(\text{Hold}) = 100\% - 12\% = 88\%$$
+\[ P(\text{Hold}) = 100\% - 12\% = 88\% \]
 
 ### 4.2 Multi-Meeting Probability (Binary Probability Tree)
 
@@ -135,9 +135,9 @@ For meetings further out, the tool maps every possible sequence of holds and hik
 
 **Summing the weight of all branches that end higher than baseline:**
 
-$$P(\text{rate} > \text{baseline}) = 42.25\% + 22.75\% + 22.75\% = 87.75\% \approx 87.8\%$$
+\[ P(\text{rate} > \text{baseline}) = 42.25\% + 22.75\% + 22.75\% = 87.75\% \approx 87.8\% \]
 
-The only path that does *not* end higher is "hold-then-hold" (both meetings pass with no move), worth 12.25%. Note the two middle branches (HIKE→HOLD and HOLD→HIKE) land on the *same* end-state — exactly one hike — so the tool adds their weights together. As a sanity check, all four leaves sum to 100%: $42.25 + 22.75 + 22.75 + 12.25 = 100\%$.
+The only path that does *not* end higher is "hold-then-hold" (both meetings pass with no move), worth 12.25%. Note the two middle branches (HIKE→HOLD and HOLD→HIKE) land on the *same* end-state — exactly one hike — so the tool adds their weights together. As a sanity check, all four leaves sum to 100%: \(42.25 + 22.75 + 22.75 + 12.25 = 100\%\).
 
 With more intervening meetings the tree simply grows more layers, but the rule is identical: **multiply along each path, then add up every path that finishes in your target bucket.**
 
@@ -195,7 +195,7 @@ The **NFP report** lands on the first Friday of each month (BLS), tracking net j
 
 A useful reminder for the stagflation case:
 
-$$\text{Real Spending Growth} = \text{Nominal Retail Sales Growth} - \text{Inflation}$$
+\[ \text{Real Spending Growth} = \text{Nominal Retail Sales Growth} - \text{Inflation} \]
 
 Consumers can spend more dollars while taking home fewer actual goods.
 
@@ -255,4 +255,4 @@ if __name__ == "__main__":
 
 ### 6.3 Paid Tier — CME FedWatch End-of-Day REST API
 
-The official FedWatch API is a paid CME Group service, advertised from about **$25/month** for end-of-day data (an intraday/60-second tier also exists). It returns clean JSON without scraping the public page.
+The official FedWatch API is a paid CME Group service, advertised from about **\$25/month** for end-of-day data (an intraday/60-second tier also exists). It returns clean JSON without scraping the public page.
