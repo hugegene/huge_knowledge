@@ -1,4 +1,6 @@
 title: huge_knowledge
 description: A personal knowledge base — notes, write-ups, and references.
 theme: minima
-header_pages: []
+
+titles_from_headings:
+  strip_title: true
