@@ -15,6 +15,7 @@ Each file is a self-contained note on one topic.
 
 ### AI / LLM / MCP
 - [Organizing a GitHub Repo for Agentic Coding](./agentic-coding-repo-organization.md) — folder structure, issue templates, the bug-fix / design-develop / testing workflows, and whether you still need Jira and Confluence.
+- [The DEV–QA Contract: Keeping QA a Gatekeeper in the Agentic Era](./dev-qa-contract-agentic-era.md) — how QA can fix bugs with coding agents without losing independence; separation of powers via DEV-owned `spec.md` and QA-owned `test-cases.md`, the spec-change escalation rule, and the prompt/hook/CI enforcement layers.
 
 ### Finance & Markets
 - [Reading the Fed Through Futures](./fed-funds-futures-and-fedwatch-handbook.md) — Fed funds futures mechanics, EFFR, how the CME FedWatch tool turns prices into rate-decision probabilities (with a worked binary probability tree), the "Big Three" macro data releases, and FRED/CME data extraction.
