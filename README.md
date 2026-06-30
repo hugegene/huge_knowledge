@@ -26,4 +26,3 @@ Each file is a self-contained note on one topic.
 ### Tooling & Workflow
 -->
 
-- [Hello](hello.md)
