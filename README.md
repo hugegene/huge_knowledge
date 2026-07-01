@@ -26,3 +26,6 @@ Each file is a self-contained note on one topic.
 ### Tooling & Workflow
 -->
 
+## Notes
+
+- [The Index Rebalance Playbook (SpaceX, Tesla, DigitalOcean)](notes/index_rebalance_playbook.md)
