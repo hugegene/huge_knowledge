@@ -4,3 +4,8 @@ theme: minima
 
 titles_from_headings:
   strip_title: true
+
+# Cloudflare Web Analytics — paste the token from the beacon snippet
+# (Cloudflare dashboard → Web Analytics → your site → the data-cf-beacon token).
+# Only loads on the production GitHub Pages build, not local `jekyll serve`.
+cloudflare_analytics: "be4f526e8f3947ec93559df204d68f9f"
