@@ -19,13 +19,10 @@ Each file is a self-contained note on one topic.
 
 ### Finance & Markets
 - [Reading the Fed Through Futures](./fed-funds-futures-and-fedwatch-handbook.md) — Fed funds futures mechanics, EFFR, how the CME FedWatch tool turns prices into rate-decision probabilities (with a worked binary probability tree), the "Big Three" macro data releases, and FRED/CME data extraction.
+- [The Index Rebalance Playbook (SpaceX, Tesla, DigitalOcean)](notes/index_rebalance_playbook.md) — how passive index funds mechanically move a stock around an inclusion/rebalance: float-adjusted weighting, the low-float multiplier, forced Market-on-Close flow, and the add-vs-delete asymmetry, walked through the Tesla (S&P 500), DigitalOcean (Russell 1000), and SpaceX (Nasdaq-100) cases.
 
 <!-- Add more sections as the library grows, e.g.:
 ### Infra & Deployment
 ### Data & Pipelines
 ### Tooling & Workflow
 -->
-
-## Notes
-
-- [The Index Rebalance Playbook (SpaceX, Tesla, DigitalOcean)](notes/index_rebalance_playbook.md)
